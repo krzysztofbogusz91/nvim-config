@@ -4,8 +4,11 @@ let $LANG='en_US'
 call plug#begin('~/.config/nvim/plugged')
 
   Plug 'dense-analysis/ale'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
   Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
   " Multi language highlighting
@@ -32,6 +35,8 @@ call plug#end()
 
 colorscheme iceberg 
 
+let g:python3_host_prog = '/usr/bin/python'
+
 let g:ale_disable_lsp = 1
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
@@ -44,6 +49,37 @@ let g:ale_fix_on_save = 1
 nmap <silent> [c <Plug>(ale_previous_wrap)
 nmap <silent> ]c <Plug>(ale_next_wrap)
 
+let g:airline_theme = 'iceberg'
+
+let g:NERDTreeGitStatusWithFlags = 1
+
+" sync open file with NERDTree
+" " Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
+
 " }}}
 
 
@@ -51,10 +87,17 @@ set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
-" syntax on
-set number
+syntax on
+set relativenumber
 set cursorline
 set cursorcolumn
+set smarttab
+set cindent
+set tabstop=2
+set shiftwidth=2
+" always uses spaces instead of tab characters
+set expandtab
+
 " Fix typescript issue
 set re=0
 "Spell check
