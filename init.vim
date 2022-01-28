@@ -49,27 +49,31 @@ let g:ale_fix_on_save = 1
 nmap <silent> [c <Plug>(ale_previous_wrap)
 nmap <silent> ]c <Plug>(ale_next_wrap)
 
-let g:airline_theme = 'iceberg'
+let g:airline_theme = 'murmur'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+" let g:airline_section_x = airline#section#create_right(['tagbar'])
+let g:airline_section_y = ''
 
 let g:NERDTreeGitStatusWithFlags = 1
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
+" function! IsNERDTreeOpen()        
+  " return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+" endfunction
 
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
+" function! SyncTree()
+  " if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    " NERDTreeFind
+    " wincmd p
+  " endif
+" endfunction
 
 " Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
+" autocmd BufEnter * call SyncTree()
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -88,6 +92,7 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
+set number
 set relativenumber
 set cursorline
 set cursorcolumn
