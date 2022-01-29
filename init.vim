@@ -17,7 +17,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'ap/vim-buftabline'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'iamcco/coc-angular'
   "Colors
   Plug 'cocopon/iceberg.vim'
   "Comments
@@ -173,6 +172,8 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-emmet', 
+  \ 'coc-css', 
   \ ]
 
 " }}}
