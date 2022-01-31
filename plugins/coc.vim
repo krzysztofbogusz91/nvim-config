@@ -2,15 +2,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  \ 'coc-pairs',
+  \ 'coc-diagnostic',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
-  \ 'coc-prettier', 
+  \ 'coc-prettier',
+  \ 'coc-git', 
   \ 'coc-json', 
+  \ 'coc-pairs',
   \ 'coc-emmet', 
+  \ 'coc-html',
   \ 'coc-css', 
   \ ]
-" COC
+
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")

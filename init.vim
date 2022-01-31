@@ -28,6 +28,7 @@ set expandtab
 set re=0
 "Spell check
 "Spell check test should highlight this 
+set spelllang=en
 set spell
 " Set shift width to 4 spaces.
 set shiftwidth=2
@@ -67,8 +68,8 @@ nmap <leader>Q :bufdo bdelete<cr>
 " Allow gf to open non-existent files from path
 map gf :edit <cfile><cr>
 
-nnoremap <C-Left> :tabprevious<CR>                                                                            
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-t>p :tabprevious<CR>                                                                            
+nnoremap <C-t>n :tabnext<CR>
 nnoremap <C-n> :tabnew<CR>
 " splits
 nnoremap <c-j> <c-w>j
@@ -95,8 +96,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin(data_dir . '/plugins')
-  
-  source ~/.config/nvim/plugins/ale.vim
+
   source ~/.config/nvim/plugins/vim-airline.vim
   source ~/.config/nvim/plugins/nerdtree.vim
   source ~/.config/nvim/plugins/vim-sayonara.vim
@@ -106,7 +106,7 @@ call plug#begin(data_dir . '/plugins')
   source ~/.config/nvim/plugins/vim-commentary.vim
   source ~/.config/nvim/plugins/vim-fugitive.vim
   source ~/.config/nvim/plugins/fzf.vim
-
+ 
 call plug#end()
 
 colorscheme iceberg 
