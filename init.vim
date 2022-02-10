@@ -27,7 +27,7 @@ set expandtab
 " Fix typescript issue
 set re=0
 "Spell check
-"Spell check test should highlight this 
+"Spell misterk check test should highlight this 
 set spelllang=en
 set spell
 " Set shift width to 4 spaces.
@@ -84,6 +84,8 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
+" Edit vim config
+nmap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 " -----------------
 " Plugins
 " -----------------
@@ -102,11 +104,27 @@ call plug#begin(data_dir . '/plugins')
   source ~/.config/nvim/plugins/vim-sayonara.vim
   source ~/.config/nvim/plugins/coc.vim
   source ~/.config/nvim/plugins/vim-polyglot.vim
-  source ~/.config/nvim/plugins/iceberg.vim
+  " source ~/.config/nvim/plugins/iceberg.vim
+  source ~/.config/nvim/plugins/colorscheme.vim
+  source ~/.config/nvim/plugins/spellcheck.vim
   source ~/.config/nvim/plugins/vim-commentary.vim
   source ~/.config/nvim/plugins/vim-fugitive.vim
   source ~/.config/nvim/plugins/fzf.vim
  
 call plug#end()
 
-colorscheme iceberg 
+function! MyHighlights() abort
+  " Spelling mistakes will also be colored red if you uncomment the colors.
+  hi SpellBad cterm=underline ctermfg=None guifg=None
+  hi SpellLocal cterm=underline ctermfg=None guifg=None
+  hi SpellRare cterm=underline ctermfg=None guifg=None
+  hi SpellCap cterm=underline ctermfg=None guifg=None
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+" colorscheme iceberg 
+colorscheme tender 
+

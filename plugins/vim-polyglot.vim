@@ -1,2 +1,3 @@
   " Multi language highlighting
-  Plug 'sheerun/vim-polyglot'
+  Plug 'HerringtonDarkholme/yats.vim'
+  " Plug 'sheerun/vim-polyglot'
