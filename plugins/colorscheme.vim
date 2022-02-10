@@ -1,0 +1,1 @@
+Plug 'jacoborus/tender.vim'
