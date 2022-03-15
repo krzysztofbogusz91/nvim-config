@@ -104,7 +104,6 @@ call plug#begin(data_dir . '/plugins')
   source ~/.config/nvim/plugins/vim-sayonara.vim
   source ~/.config/nvim/plugins/coc.vim
   source ~/.config/nvim/plugins/vim-polyglot.vim
-  " source ~/.config/nvim/plugins/iceberg.vim
   source ~/.config/nvim/plugins/colorscheme.vim
   source ~/.config/nvim/plugins/spellcheck.vim
   source ~/.config/nvim/plugins/vim-commentary.vim
@@ -114,8 +113,8 @@ call plug#begin(data_dir . '/plugins')
 call plug#end()
 
 function! MyHighlights() abort
-  " Spelling mistakes will also be colored red if you uncomment the colors.
-  hi SpellBad cterm=underline ctermfg=None guifg=None
+  " Spelling mistakes will also be mistak colored red if you uncomment the colors.
+  hi SpellBad cterm=underline gui=undercurl guisp=Red ctermfg=None guifg=None
   hi SpellLocal cterm=underline ctermfg=None guifg=None
   hi SpellRare cterm=underline ctermfg=None guifg=None
   hi SpellCap cterm=underline ctermfg=None guifg=None
@@ -125,6 +124,6 @@ augroup MyColors
     autocmd!
     autocmd ColorScheme * call MyHighlights()
 augroup END
-" colorscheme iceberg 
+
 colorscheme tender 
 
