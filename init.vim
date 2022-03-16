@@ -14,6 +14,7 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
+set clipboard+=unnamedplus
 set number
 set relativenumber
 set cursorline
