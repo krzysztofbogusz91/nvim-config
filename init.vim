@@ -110,6 +110,7 @@ call plug#begin(data_dir . '/plugins')
   source ~/.config/nvim/plugins/vim-commentary.vim
   source ~/.config/nvim/plugins/vim-fugitive.vim
   source ~/.config/nvim/plugins/fzf.vim
+  source ~/.config/nvim/plugins/markdown.vim
  
 call plug#end()
 
