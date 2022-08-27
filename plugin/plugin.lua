@@ -15,16 +15,20 @@ packer.startup(function(use)
     run = ':TSUpdate'
   }
   use 'nvim-lua/plenary.nvim' -- Common utilities
-  -- use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
-  use 'L3MON4D3/LuaSnip' -- Snipets for CMP
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Linting from lsp
   use 'glepnir/lspsaga.nvim' -- LSP UIs
 
-  use 'MunifTanjim/prettier.nvim' 
+  -- Cmp code complete, dropdown, snipets
+  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp' -- Completion
+
+  use 'L3MON4D3/LuaSnip' -- Snipets for CMP
+  use { 'saadparwaiz1/cmp_luasnip' } -- Conect luasnip and cmp
+
+  use('MunifTanjim/prettier.nvim')
 
   use { "ellisonleao/gruvbox.nvim" }
   use 'nvim-lualine/lualine.nvim' -- Statusline

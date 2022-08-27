@@ -1,8 +1,8 @@
+
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -12,15 +12,39 @@ local on_attach = function(client, bufnr)
 
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
+  local bufmap = function(mode, lhs, rhs)
+    local opts = {buffer = true}
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
   -- Mappings.
   local opts = { noremap = true, silent = true }
+  -- Displays hover information about the symbol under the cursor
+  bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+   -- Jump to the definition
+  bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')  
+  -- Jump to declaration
+  bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    -- Lists all the references 
+    bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+    -- Renames all references to the symbol under the cursor
+    bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
 
+    -- Lists all the implementations for the symbol under the cursor
+    bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+    -- Selects a code action available at the current cursor position
+    bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+    bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+    -- Show diagnostics in a floating window
+    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+
+      -- Move to the previous diagnostic
+      bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+
+      -- Move to the next diagnostic
+      bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  -- buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 end
 
 protocol.CompletionItemKind = {
@@ -68,11 +92,15 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.angularls.setup{}
+nvim_lsp.angularls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 
-nvim_lsp.tailwindcss.setup {}
-
-nvim_lsp.eslint.setup{}
+nvim_lsp.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 
 nvim_lsp.sourcekit.setup {
   on_attach = on_attach,
@@ -122,3 +150,5 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
+
+require('luasnip.loaders.from_vscode').lazy_load()
