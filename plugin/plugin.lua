@@ -30,6 +30,11 @@ packer.startup(function(use)
 
   use('MunifTanjim/prettier.nvim')
 
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+
   use { "ellisonleao/gruvbox.nvim" }
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use {
@@ -38,6 +43,4 @@ packer.startup(function(use)
       require("better_escape").setup()
     end,
   }
-
-  -- Your plugins go here
 end)

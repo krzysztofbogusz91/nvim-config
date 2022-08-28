@@ -2,6 +2,7 @@
 
 ### TODO
  - [ ] Fix issue with lsp angular!
+ - [ ] Fix issues with snipets
 - [ ] LSP configs https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
 - [ ] TERMINAL CUTOM https://github.com/egel/tmux-gruvbox color
 - [ ] LSP -configs https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig.lua
