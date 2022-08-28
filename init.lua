@@ -1,5 +1,5 @@
 vim.cmd("autocmd!")
-
+-- TODO map old settings and key-bindigs here
 DATA_PATH = vim.fn.stdpath('data')
 
 vim.api.nvim_exec ('language en_US', true)

@@ -16,6 +16,10 @@ packer.startup(function(use)
   }
   use 'nvim-lua/plenary.nvim' -- Common utilities
 
+  -- LSP automatization for language servers 
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Linting from lsp
   use 'glepnir/lspsaga.nvim' -- LSP UIs
@@ -27,6 +31,7 @@ packer.startup(function(use)
 
   use 'L3MON4D3/LuaSnip' -- Snipets for CMP
   use { 'saadparwaiz1/cmp_luasnip' } -- Conect luasnip and cmp
+  use { 'rafamadriz/friendly-snippets' } -- Conect luasnip and cmp
 
   use('MunifTanjim/prettier.nvim')
 
