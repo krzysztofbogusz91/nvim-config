@@ -1,8 +1,10 @@
 ## Nvim Lua Config
 
 ### TODO
- - [ ] Fix issue with lsp angular!
- - [ ] Fix issues with snipets
+ - [.] Fix issue with lsp angular! Add angular snipets and vue snipets
+ - [x] Fix issues with snipets
+ - [ ] Add surround vim https://github.com/kylechui/nvim-surround
+ - [ ] Chris@mashine setup good https://github.com/ChristianChiarulli/nvim/blob/aa0efdf595e2ebc0b603fad25d95fda2a006bd20/lua/user/plugins.lua
 - [ ] LSP configs https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
 - [ ] TERMINAL CUTOM https://github.com/egel/tmux-gruvbox color
 - [ ] LSP -configs https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig.lua
@@ -37,3 +39,7 @@ Alt + D: delete to the end of word
 - [ ] Auto close tags
 - [ ] Emmet
 - [ ] Auto add brackets text inside " { } [] 
+
+Wish list:
+
+- [ ] Code actions extract to function (general refactor)

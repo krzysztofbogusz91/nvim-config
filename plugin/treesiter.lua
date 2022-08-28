@@ -17,7 +17,11 @@ ts.setup {
     "yaml",
     "css",
     "html",
-    "lua"
+    "lua",
+    "regex",
+    "markdown",
+    "javascript", 
+    "graphql"
   },
   autotag = {
     enable = true,
