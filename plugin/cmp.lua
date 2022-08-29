@@ -78,6 +78,7 @@ cmp.setup({
     --   format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
     -- }
 })
--- require("luasnip/loaders/from_vscode").lazy_load()
--- require("luasnip.loaders.from_vscode").load({ include = { "python" } })
+
 require('luasnip.loaders.from_vscode').lazy_load()
+-- TODO only load for angular server???
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/angular" } }

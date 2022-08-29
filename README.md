@@ -1,9 +1,11 @@
 ## Nvim Lua Config
 
 ### TODO
- - [.] Fix issue with lsp angular! Add angular snipets and vue snipets
+ - [x] Fix issue with lsp angular! Add angular snipets and vue snipets
  - [x] Fix issues with snipets
- - [ ] Learn to jump between args in snippets and functions
+ - [ ] Awesome tut for snipets https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a
+ - [ ] Debuging as above form angular art
+ - [-] Learn to jump between args in snippets and functions
  - [ ] FIND HOW TO ANGULAR SNIPETS !
  - [ ] ADD MARKDOWN TODO ETC https://github.com/jakewvincent/mkdnflow.nvim
  - [ ] How does he jump between https://github.com/rafamadriz/friendly-snippets ???
