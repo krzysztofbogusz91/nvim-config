@@ -3,6 +3,10 @@
 ### TODO
  - [.] Fix issue with lsp angular! Add angular snipets and vue snipets
  - [x] Fix issues with snipets
+ - [ ] Learn to jump between args in snippets and functions
+ - [ ] FIND HOW TO ANGULAR SNIPETS !
+ - [ ] ADD MARKDOWN TODO ETC https://github.com/jakewvincent/mkdnflow.nvim
+ - [ ] How does he jump between https://github.com/rafamadriz/friendly-snippets ???
  - [ ] Add surround vim https://github.com/kylechui/nvim-surround
  - [ ] Chris@mashine setup good https://github.com/ChristianChiarulli/nvim/blob/aa0efdf595e2ebc0b603fad25d95fda2a006bd20/lua/user/plugins.lua
 - [ ] LSP configs https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
