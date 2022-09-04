@@ -48,4 +48,18 @@ packer.startup(function(use)
       require("better_escape").setup()
     end,
   }
+
+
+  use { 'jakewvincent/mkdnflow.nvim',
+    config = function()
+      require('mkdnflow').setup({})
+    end
+  }
+
+  use { "terrortylor/nvim-comment",
+  config = function() 
+    require('nvim_comment').setup()
+  end
+ }
+
 end)
