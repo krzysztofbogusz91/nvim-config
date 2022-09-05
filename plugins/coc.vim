@@ -12,6 +12,8 @@ let g:coc_global_extensions = [
   \ 'coc-emmet', 
   \ 'coc-html',
   \ 'coc-css', 
+  \ 'coc-vetur', 
+  \ 'coc-tailwindcss'
   \ ]
 
 " Always show the signcolumn, otherwise it would shift the text each time

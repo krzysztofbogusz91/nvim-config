@@ -2,7 +2,7 @@
   Plug 'airblade/vim-gitgutter'
 
   nnoremap <leader>gs :Git<CR>
-  nnoremap <leader>gc :Gcommit -v -q<CR>
+  nnoremap <leader>gc :Git commit -v -q<CR>
   nnoremap <leader>ga :Gcommit --amend<CR>
   nnoremap <leader>gt :Gcommit -v -q %<CR>
   nnoremap <leader>gd :Gvdiffsplit<CR>

@@ -39,8 +39,9 @@ set tabstop=2
 set nobackup
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
+" Do wrap lines no wraping was annoying
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
+" set nowrap
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
 " Show partial command you type in the last line of the screen.
