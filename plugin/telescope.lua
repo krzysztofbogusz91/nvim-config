@@ -41,18 +41,19 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+builtin.git_files({ show_untracked = false })
 
-vim.keymap.set('n', ';f',
+vim.keymap.set('n', '<c-p>',
   function()
     builtin.find_files({
       no_ignore = false,
       hidden = true
     })
   end)
-vim.keymap.set('n', ';r', function()
+vim.keymap.set('n', '<c-f>', function()
   builtin.live_grep()
 end)
-vim.keymap.set('n', '\\\\', function()
+vim.keymap.set('n', '<c-b>', function()
   builtin.buffers()
 end)
 vim.keymap.set('n', ';t', function()
@@ -68,6 +69,18 @@ vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 }
+  })
+end)
+
+vim.keymap.set("n", "sF", function()
+  telescope.extensions.file_browser.file_browser({
+    -- cwd = true,
     respect_gitignore = false,
     hidden = true,
     grouped = true,
