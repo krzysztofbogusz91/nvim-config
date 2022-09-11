@@ -4,10 +4,9 @@ vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.wo.number = true
- 
+
 -- set space to be a leader
 vim.g.mapleader = " "
-
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -24,6 +23,7 @@ vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in 
 vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
+
 vim.opt.tabstop = 2
 vim.opt.wrap = true -- Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
@@ -35,11 +35,11 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.cmd([[set clipboard=unnamedplus]])
 vim.cmd([[set signcolumn=yes]])
 
-
-require "mappings.mappings"
+ require "mappings.mappings"
 require "ext.autopairs"
 require "ext.gruvbox"
 require "ext.better_escape"
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+

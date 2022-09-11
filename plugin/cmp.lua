@@ -80,5 +80,4 @@ cmp.setup({
 })
 
 require('luasnip.loaders.from_vscode').lazy_load()
--- TODO only load for angular server???
 require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/angular" } }

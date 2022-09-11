@@ -5,12 +5,11 @@ local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
 
 null_ls.setup {
   sources = {
-
-  null_ls.builtins.formatting.stylua,
-  null_ls.builtins.formatting.prettier,
-  -- null_ls.builtins.diagnostics.eslint,
-  -- null_ls.builtins.completion.spell,
-  -- null_ls.builtins.completion.luasnip,
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.prettier,
+    -- null_ls.builtins.diagnostics.eslint,
+    -- null_ls.builtins.completion.spell,
+    -- null_ls.builtins.completion.luasnip,
 }, 
 -- prettier setup
 on_attach = function(client, bufnr)
