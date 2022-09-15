@@ -24,6 +24,9 @@ vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 
+-- must haves
+vim.opt.spell = true
+
 vim.opt.tabstop = 2
 vim.opt.wrap = true -- Wrap lines
 vim.opt.backspace = { 'start', 'eol', 'indent' }
