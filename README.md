@@ -3,7 +3,9 @@
 - [CheatSheet](~/.config/nvim/docs/cheat_sheet.md)
 
 ### TODO
-  
+
+- [ ] PIN PACKAGES!!!! TO COMMITS! TO Keep ide constent!
+- [ ] add the table of content plugin
 - [ ] Add md paste image https://github.com/ekickx/clipboard-image.nvim
 - [ ] Setup debbuger : https://alpha2phi.medium.com/neovim-for-beginners-angular-d202f3ea2f52
 - [ ] Awesome tut for snipets https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a
@@ -14,6 +16,7 @@
 
 - [ ] CMP addons configs https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources#snippets
 - [ ] Research https://github.com/pwntester/octo.nvim github integration
+
 ### TERMINAL
 
 - not really working

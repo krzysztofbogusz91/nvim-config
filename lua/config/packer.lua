@@ -67,8 +67,8 @@ packer.startup(function(use)
 
   use('MunifTanjim/prettier.nvim')
 
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  use { 'nvim-telescope/telescope.nvim', commit = '30e2dc5232d0dd63709ef8b44a5d6184005e8602'}
+  use {'nvim-telescope/telescope-file-browser.nvim', commit = '60bcf4e70ecb9392445c2a2205ee8181dff964d5'}
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 
