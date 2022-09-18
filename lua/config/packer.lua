@@ -67,7 +67,11 @@ packer.startup(function(use)
 
   use('MunifTanjim/prettier.nvim')
 
-  use { 'nvim-telescope/telescope.nvim', commit = '30e2dc5232d0dd63709ef8b44a5d6184005e8602'}
+  use { 'nvim-telescope/telescope.nvim', commit = '30e2dc5232d0dd63709ef8b44a5d6184005e8602',
+  config = function()
+    require("telescope").setup()
+  end,
+}
   use {'nvim-telescope/telescope-file-browser.nvim', commit = '60bcf4e70ecb9392445c2a2205ee8181dff964d5'}
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
@@ -98,6 +102,12 @@ packer.startup(function(use)
   use "f-person/git-blame.nvim"
   use {'akinsho/git-conflict.nvim', tag = "*", config = function()
       require('git-conflict').setup()
+  end}
+
+  -- Smooth scrolling for window movement commands (mappings optional): <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
+  use {'karb94/neoscroll.nvim', commit = 'd38b613f9177f3ca40dc8958314fce1d77939fc2',
+  config = function() 
+    require('neoscroll').setup()
   end}
 
   -- Automatically set up your configuration after cloning packer.nvim
