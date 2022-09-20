@@ -48,7 +48,7 @@ packer.startup(function(use)
   }
   use 'nvim-lua/plenary.nvim' -- Common utilities
 
-  -- LSP automatization for language servers 
+  -- LSP automatization for language servers
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
@@ -67,10 +67,10 @@ packer.startup(function(use)
 
   use('MunifTanjim/prettier.nvim')
 
-  use { 'nvim-telescope/telescope.nvim', commit = '30e2dc5232d0dd63709ef8b44a5d6184005e8602'}
+  use { 'nvim-telescope/telescope.nvim', commit = '30e2dc5232d0dd63709ef8b44a5d6184005e8602' }
   -- todo update in the future for now hijack_nerd_tree is not working as intended
   -- https://github.com/nvim-telescope/telescope-file-browser.nvim/commit/c46e7e7e8adb9f17462d9ff1787209b483a640aa
-  use {'nvim-telescope/telescope-file-browser.nvim', commit = 'c30fcb6214acf8538616e403e0f82a6430bf6801'}
+  use { 'nvim-telescope/telescope-file-browser.nvim', commit = 'c30fcb6214acf8538616e403e0f82a6430bf6801' }
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
 
@@ -91,26 +91,27 @@ packer.startup(function(use)
   }
 
   use { "terrortylor/nvim-comment",
-  config = function() 
-    require('nvim_comment').setup()
-  end
- }
- 
+    config = function()
+      require('nvim_comment').setup()
+    end
+  }
+
   -- GIT
   use "f-person/git-blame.nvim"
-  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
-      require('git-conflict').setup()
-  end}
+  use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end }
 
   -- Smooth scrolling for window movement commands (mappings optional): <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
-  use {'karb94/neoscroll.nvim', commit = 'd38b613f9177f3ca40dc8958314fce1d77939fc2',
-  config = function() 
-    require('neoscroll').setup()
-  end}
-
+  -- use {'karb94/neoscroll.nvim', commit = 'd38b613f9177f3ca40dc8958314fce1d77939fc2',
+  -- config = function()
+  --   require('neoscroll').setup()
+  -- end}
+  --
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)
+

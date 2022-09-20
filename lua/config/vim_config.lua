@@ -26,6 +26,8 @@ vim.opt.shiftwidth = 2
 
 -- must haves
 vim.opt.spell = true
+-- keep track of file changes outside from vim, prevent swap conflicts hopefully
+vim.opt.autoread = true
 
 vim.opt.tabstop = 2
 vim.opt.wrap = true -- Wrap lines

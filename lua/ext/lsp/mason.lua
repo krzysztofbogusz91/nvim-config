@@ -5,18 +5,18 @@ if (not status2) then return end
 
 local on_attach = function(client, bufnr)
   local bufmap = function(mode, lhs, rhs)
-    local opts = {buffer = true}
+    local opts = { buffer = true }
     vim.keymap.set(mode, lhs, rhs, opts)
   end
   -- Mappings.
   local opts = { noremap = true, silent = true }
   -- Displays hover information about the symbol under the cursor
   bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-   -- Jump to the definition
-  bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')  
+  -- Jump to the definition
+  bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
   -- Jump to declaration
   bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-  -- Lists all the references 
+  -- Lists all the references
   bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
   -- Renames all references to the symbol under the cursor
   bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
@@ -24,8 +24,8 @@ local on_attach = function(client, bufnr)
   -- Lists all the implementations for the symbol under the cursor
   bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
   -- Selects a code action available at the current cursor position
-  bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-  bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+  bufmap('n', '<c-a>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+  bufmap('x', '<c-a>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
   -- Show diagnostics in a floating window
   bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
 
@@ -37,29 +37,29 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
-    "html",
-    "jsonls",
+  "html",
+  "jsonls",
 
 
-    "cssls",
-    "cssmodules_ls",
-    "tailwindcss",
+  "cssls",
+  "cssmodules_ls",
+  "tailwindcss",
 
-    "emmet_ls",
+  "emmet_ls",
 
-    "tflint",
-    "tsserver",
-    "angularls",
-    "volar",
+  "tflint",
+  "tsserver",
+  "angularls",
+  "volar",
 
-    "yamlls",
-    "bashls",
+  "yamlls",
+  "bashls",
 
-    -- markdown
-    "zk",
+  -- markdown
+  "zk",
 
-    "sumneko_lua",
-  }
+  "sumneko_lua",
+}
 --  TODO eslint test!!
 mason.setup({})
 
@@ -88,21 +88,21 @@ lspconfig.flow.setup {
   capabilities = capabilities
 }
 lspconfig.tsserver.setup {
-  on_attach = function(client, bufnr) 
+  on_attach = function(client, bufnr)
     client.resolved_capabilities.document_formatting = false
     client.resolved_capabilities.document_range_formatting = false
-    -- for nvim 0.8 need to switch to those: 
+    -- for nvim 0.8 need to switch to those:
     --  https://github.com/neovim/nvim-lspconfig/issues/1891#issuecomment-1157964108
     -- client.server_capabilities.documentFormattingProvider = false
     -- client.server_capabilities.documentRangeFormattingProvider = false
-    on_attach(client, bufnr) 
+    on_attach(client, bufnr)
   end,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   -- cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
 }
 
-lspconfig.angularls.setup{
+lspconfig.angularls.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
@@ -112,12 +112,12 @@ lspconfig.tailwindcss.setup {
   capabilities = capabilities
 }
 
-lspconfig.zk.setup{
+lspconfig.zk.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
 
-lspconfig.volar.setup{
+lspconfig.volar.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
@@ -141,29 +141,28 @@ lspconfig.sumneko_lua.setup {
 }
 
 -- Make snipet go last
-lspconfig.emmet_ls.setup{
+lspconfig.emmet_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-    -- cmd = { "emmet_ls", "--stdio" },
-    filetypes = {
-      "html",
-      "css",
-      "scss",
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "haml",
-      "xml",
-      "xsl",
-      "pug",
-      "slim",
-      "sass",
-      "stylus",
-      "less",
-      "sss",
-      "hbs",
-      "handlebars",
-    },
-  }
-
+  -- cmd = { "emmet_ls", "--stdio" },
+  filetypes = {
+    "html",
+    "css",
+    "scss",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "haml",
+    "xml",
+    "xsl",
+    "pug",
+    "slim",
+    "sass",
+    "stylus",
+    "less",
+    "sss",
+    "hbs",
+    "handlebars",
+  },
+}
