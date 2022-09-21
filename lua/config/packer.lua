@@ -54,7 +54,9 @@ packer.startup(function(use)
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Linting from lsp
-  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  -- removing for now to test other solutions (lots of overrides), its not that bad after all
+  -- learn how to use it right! https://github.com/glepnir/lspsaga.nvim
+  -- use 'glepnir/lspsaga.nvim' -- LSP UIs
 
   -- Cmp code complete, dropdown, snipets
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
