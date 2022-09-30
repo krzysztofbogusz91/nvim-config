@@ -104,6 +104,17 @@ packer.startup(function(use)
     require('git-conflict').setup()
   end }
 
+
+  -- Autosave
+  use({
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {}
+    end,
+    commit = '2c7a2943340ee2a36c6a61db812418fca1f57866',
+    debounce_delay = 1350,
+  })
+
   -- Smooth scrolling for window movement commands (mappings optional): <C-u>, <C-d>, <C-b>, <C-f>, <C-y>, <C-e>, zt, zz, zb.
   -- use {'karb94/neoscroll.nvim', commit = 'd38b613f9177f3ca40dc8958314fce1d77939fc2',
   -- config = function()
@@ -116,4 +127,3 @@ packer.startup(function(use)
     require("packer").sync()
   end
 end)
-
