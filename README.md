@@ -16,6 +16,16 @@
 
 - [ ] CMP addons configs https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources#snippets
 - [ ] Research https://github.com/pwntester/octo.nvim github integration
+- update and customise startup https://github.com/startup-nvim/startup.nvim
+### Fix autosave and related issues
+
+- curently there is issue when using startup error when accessing files
+- err with to quick save and format we need to split it
+- error same as above with undo 
+
+Possible resolutions (attach before save hooks or other)
+- https://github.com/Pocco81/auto-save.nvim/issues/12#issuecomment-1179462485
+- https://github.com/Pocco81/auto-save.nvim/issues/14
 
 ### TERMINAL
 
