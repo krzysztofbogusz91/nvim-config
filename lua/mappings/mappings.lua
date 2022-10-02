@@ -7,7 +7,6 @@ function map(mode, lhs, rhs, opts)
   end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
 -- edit file under cursor
 map("n", ",gf", "edit <cfile><cr>", op)
 vim.cmd([[nmap <c-q> :bd<cr>]], op)
