@@ -68,10 +68,10 @@ packer.startup(function(use)
 
 	use("MunifTanjim/prettier.nvim")
 
-	use({ "nvim-telescope/telescope.nvim", commit = "30e2dc5232d0dd63709ef8b44a5d6184005e8602" })
+	use {"nvim-telescope/telescope.nvim", tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} }}
 	-- todo update in the future for now hijack_nerd_tree is not working as intended
 	-- https://github.com/nvim-telescope/telescope-file-browser.nvim/commit/c46e7e7e8adb9f17462d9ff1787209b483a640aa
-	use({ "nvim-telescope/telescope-file-browser.nvim", commit = "c30fcb6214acf8538616e403e0f82a6430bf6801" })
+	use("nvim-telescope/telescope-file-browser.nvim")
 	use("windwp/nvim-autopairs")
 	use("windwp/nvim-ts-autotag")
 

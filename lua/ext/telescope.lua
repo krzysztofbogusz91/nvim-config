@@ -41,7 +41,9 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
-builtin.git_files({ show_untracked = false })
+
+-- Shows files on startup
+-- builtin.git_files({ show_untracked = false })
 
 vim.keymap.set('n', '<c-p>',
   function()
