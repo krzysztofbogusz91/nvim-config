@@ -1,3 +1,4 @@
+-- Updated and working with nvim 0.8
 require("config.vim_config")
 require("config.packer")
 require("mappings.mappings")

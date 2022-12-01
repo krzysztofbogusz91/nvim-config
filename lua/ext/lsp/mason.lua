@@ -83,7 +83,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-cmp_lspconfig.update_capabilities(capabilities)
+cmp_lspconfig.default_capabilities(capabilities)
 
 lspconfig.flow.setup({
   on_attach = on_attach,
@@ -91,12 +91,12 @@ lspconfig.flow.setup({
 })
 lspconfig.tsserver.setup({
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    -- client.resolved_capabilities.document_formatting = false
+    -- client.resolved_capabilities.document_range_formatting = false
     -- for nvim 0.8 need to switch to those:
     --  https://github.com/neovim/nvim-lspconfig/issues/1891#issuecomment-1157964108
-    -- client.server_capabilities.documentFormattingProvider = false
-    -- client.server_capabilities.documentRangeFormattingProvider = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
     on_attach(client, bufnr)
   end,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
@@ -126,12 +126,12 @@ lspconfig.volar.setup({
 
 lspconfig.sumneko_lua.setup({
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    -- client.resolved_capabilities.document_formatting = false
+    -- client.resolved_capabilities.document_range_formatting = false
     -- for nvim 0.8 need to switch to those:
     --  https://github.com/neovim/nvim-lspconfig/issues/1891#issuecomment-1157964108
-    -- client.server_capabilities.documentFormattingProvider = false
-    -- client.server_capabilities.documentRangeFormattingProvider = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
     on_attach(client, bufnr)
   end,
   settings = {
