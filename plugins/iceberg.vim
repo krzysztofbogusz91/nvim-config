@@ -1,2 +1,0 @@
-Plug 'cocopon/iceberg.vim'
-
